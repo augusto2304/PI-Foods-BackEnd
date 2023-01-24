@@ -12,6 +12,7 @@ router.get('/' , async (req,res) => {
         if(name){
             const resultFilter = allRecipes.filter(e => e.name.toLowerCase().includes(name.toLowerCase()))
             if(resultFilter.length === 0) {return res.status(404).send('No se encontro ninguna receta.')}
+            console.log(allRecipes)
             return res.status(200).send(resultFilter)
         }else{
             return res.status(201).send(allRecipes)
